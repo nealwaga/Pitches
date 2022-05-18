@@ -5,8 +5,8 @@ from app.models import User, Pitches, Comments
 
 
 #app = create_app('development')
-#app = create_app('production')
 app = create_app('production')
+
 manager = Manager(app)
 manager.add_command('server',Server)
 
@@ -27,5 +27,5 @@ manager.add_command('db',MigrateCommand)
 
 
 if __name__ == '__main__':
-    #app.run(host='0.0.0.0',port=9050)
+    #app.run(port=9050)
     manager.run()
