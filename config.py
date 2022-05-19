@@ -2,8 +2,7 @@ import os
 
 class Config:
 
-    #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://neal:Wneal9.@localhost/pitch'
-    SQLALCHEMY_DATABASE_URI = 'postgres://ydpppvnrrwcyir:cfabd1313da50a2a7610121112763b7212a866fc68a41f5c5d773371434741e2@ec2-34-201-95-176.compute-1.amazonaws.com:5432/dfdnkqfol0f6ag'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://neal:1234@localhost/pitchie'
     SECRET_KEY = '12345'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
@@ -26,7 +25,7 @@ class Config:
 
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://neal:Wneal9.@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://neal:1234@localhost/pitchie'
     uri = os.getenv("DATABASE_URL")  # or other relevant config var
     if uri and uri.startswith("postgres://"):
          uri = uri.replace("postgres://", "postgresql://", 1)
@@ -35,7 +34,7 @@ class ProdConfig(Config):
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://neal:Wneal9.@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://neal:1234@localhost/pitchie'
 
 class DevConfig(Config):
     '''
