@@ -1,3 +1,5 @@
+from cmath import e
+from tkinter import EXCEPTION
 from .import auth
 from flask import render_template,redirect,url_for, flash,request
 from ..models import User
@@ -21,11 +23,12 @@ def login():
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
+    #try: 
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(email = form.email.data,
-         author = form.author.data,
-         password = form.password.data)
+        author = form.author.data,
+        password = form.password.data)
 
         db.session.add(user)
         db.session.commit()
@@ -36,6 +39,9 @@ def register():
 
     return render_template('auth/register.html',registration_form = form)
 
+    #except Exception as e:
+        #print(e)
+        #return "error in this page"
 @auth.route('/logout')
 @login_required
 def logout():

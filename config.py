@@ -3,7 +3,7 @@ import os
 class Config:
 
     #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://neal:1234@localhost/pitchie'
-    SQLALCHEMY_DATABASE_URI = 'postgres://jtmraqtapxqdvn:d30b6ac1820f573a3ff4cfa076781c9ccec6bb562ce6f76ef14d7983f9402ade@ec2-34-231-177-125.compute-1.amazonaws.com:5432/d8e8kap901j6ve'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://jtmraqtapxqdvn:d30b6ac1820f573a3ff4cfa076781c9ccec6bb562ce6f76ef14d7983f9402ade@ec2-34-231-177-125.compute-1.amazonaws.com:5432/d8e8kap901j6ve'
     SECRET_KEY = '12345'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
