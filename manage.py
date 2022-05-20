@@ -29,4 +29,4 @@ manager.add_command('db',MigrateCommand)
 
 if __name__ == '__main__':
     #app.run(port=9050)
-    manager.run(host='0.0.0.0', port=9090)
+    app.run(host='0.0.0.0', port=9040)
